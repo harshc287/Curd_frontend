@@ -65,7 +65,7 @@ const Dashboard = () => {
      
       {products.map((product) => (
         <div
-          key={product._id}
+          key={product.id}
           style={{
             border: '1px solid black',
             padding: '10px',
@@ -80,13 +80,13 @@ const Dashboard = () => {
 
         
           <button
-            onClick={() => navigate(`/edit-product/${product._id}`)}
+            onClick={() => navigate(`/edit-product/${product.id}`)}
           >
         Edit
           </button>
 
           <button
-            onClick={() => handleDelete(product._id)}
+            onClick={() => handleDelete(product.id)}
             style={{ marginLeft: '10px', color: 'red' }}
           >
             🗑️ Delete
