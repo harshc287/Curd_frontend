@@ -31,7 +31,7 @@ const AddProduct = () => {
 
       await createProduct({
         ...form,
-        price: Number(form.price) // ✅ important for backend
+        price: Number(form.price)
       });
 
       setLoading(false);

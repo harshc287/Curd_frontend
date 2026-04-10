@@ -40,11 +40,12 @@ const UpdateProduct = () => {
 
       await updateProduct(id, {
         ...form,
-        price: Number(form.price) // ✅ important
+        price: Number(form.price) 
       });
 
       setLoading(false);
       navigate('/dashboard');
+      
     } catch (error) {
       console.log(error);
       setLoading(false);

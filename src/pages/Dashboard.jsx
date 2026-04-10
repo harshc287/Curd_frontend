@@ -8,7 +8,7 @@ const Dashboard = () => {
 
   const navigate = useNavigate();
 
-  // 🔹 Fetch Products
+ 
   const fetchProducts = async () => {
     try {
       setLoading(true);
@@ -25,7 +25,7 @@ const Dashboard = () => {
     fetchProducts();
   }, []);
 
-  // 🔹 Delete Product
+
   const handleDelete = async (id) => {
     const confirmDelete = window.confirm('Are you sure you want to delete?');
 
@@ -33,13 +33,12 @@ const Dashboard = () => {
 
     try {
       await deleteProduct(id);
-      fetchProducts(); // refresh list
+      fetchProducts(); 
     } catch (error) {
       console.log(error);
     }
   };
 
-  // 🔹 Logout
   const handleLogout = () => {
     localStorage.removeItem('token');
     navigate('/');
@@ -49,7 +48,6 @@ const Dashboard = () => {
     <div style={{ padding: '20px' }}>
       <h1>Dashboard</h1>
 
-      {/* Top Buttons */}
       <div style={{ marginBottom: '20px' }}>
         <button onClick={() => navigate('/add-product')}>
           ➕ Add Product
@@ -60,13 +58,11 @@ const Dashboard = () => {
         </button>
       </div>
 
-      {/* Loading */}
       {loading && <p>Loading...</p>}
 
-      {/* No Products */}
       {!loading && products.length === 0 && <p>No products found</p>}
 
-      {/* Product List */}
+     
       {products.map((product) => (
         <div
           key={product._id}
@@ -82,11 +78,11 @@ const Dashboard = () => {
           <p><strong>Description:</strong> {product.description}</p>
           <p><strong>Category:</strong> {product.category}</p>
 
-          {/* Actions */}
+        
           <button
             onClick={() => navigate(`/edit-product/${product._id}`)}
           >
-            ✏️ Edit
+        Edit
           </button>
 
           <button

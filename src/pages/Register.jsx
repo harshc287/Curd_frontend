@@ -22,7 +22,7 @@ const handleRegister = async (e) => {
     e.preventDefault();
 
     try {
-        if (!form.name || !form.email || !form.password) { // ✅ FIXED
+        if (!form.name || !form.email || !form.password) { 
             alert('Please fill all the fields');
             return;
         }
